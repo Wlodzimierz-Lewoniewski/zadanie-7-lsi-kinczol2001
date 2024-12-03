@@ -25,7 +25,7 @@ def latent_semantic_indexing(documents, query, k):
         (np.linalg.norm(query_reduced) * np.linalg.norm(documents_reduced[:, i]))
         for i in range(documents_reduced.shape[1])
     ]
-    return similarities
+    return [round(sim, 2) for sim in similarities]
 
 def main():
     n = int(input())
